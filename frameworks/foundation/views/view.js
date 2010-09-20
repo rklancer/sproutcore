@@ -3269,7 +3269,7 @@ SC.View = SC.Responder.extend(SC.DelegateSupport,
       layout.maxHeight ;
     
     // if zIndex is set, use it.  otherwise let default shine through
-    ret.zIndex = SC.none(layout.zIndex) ? null : layout.zIndex.toString();
+    if ( !SC.none(layout.zIndex) ) ret.zIndex = layout.zIndex.toString();
 
     // if opacity is set, use it. otherwise let default shine through
     ret.opacity = SC.none(layout.opacity) ? null : layout.opacity.toString();
@@ -3277,9 +3277,9 @@ SC.View = SC.Responder.extend(SC.DelegateSupport,
 
     // if backgroundPosition is set, use it.
     // otherwise let default shine through
-    ret.backgroundPosition = SC.none(layout.backgroundPosition) ?
-      null :
-      layout.backgroundPosition.toString() ;
+    if ( !SC.none(layout.backgroundPosition) ) {
+      ret.backgroundPosition = layout.backgroundPosition.toString();
+    }
     
     // set default values to null to allow built-in CSS to shine through
     // currently applies only to marginLeft & marginTop
