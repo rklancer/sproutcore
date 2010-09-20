@@ -37,6 +37,12 @@ function performLayoutTest(layout, no_f, no_s, with_f, with_s) {
     if (typeof with_s[key] === 'number') with_s[key] = no_s[key].toString() + 'px';
   });
   
+  // special-case fix for 2 attributes for which IE cannot handle null values
+  // (see view.js commit 9a1275ee9e91ebcc7a9818d27ad1dda7816fce01)
+
+  no_s['zIndex'] = no_s['zIndex'] || '';
+  no_s['backgroundPosition'] = no_s['backgroundPosition'] || '';
+  
   // set layout
   child.set('layout', layout) ;
 
