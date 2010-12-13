@@ -330,8 +330,8 @@ SC.View = SC.Responder.extend(SC.DelegateSupport,
     if (baseThemeName) {
       return SC.Theme.find(baseThemeName);
     } else {
-      parent = this.get('parentView');
-      theme  = parent && parent.get('theme');
+      var parent = this.get('parentView');
+      var theme  = parent && parent.get('theme');
       return   theme || SC.Theme.find(SC.defaultTheme);
     }
   }.property('baseThemeName', 'parentView').cacheable(),
