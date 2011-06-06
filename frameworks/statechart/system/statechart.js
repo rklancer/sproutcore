@@ -655,9 +655,9 @@ SC.StatechartManager = {
       if (!responder.get('isCurrentState')) continue;
       while (!eventHandled && responder) {
         if (responder.tryToPerform) {
-          try {
+          // try {
             eventHandled = responder.tryToHandleEvent(event, sender, context);
-          } catch (ex) { /** Gobal the exception and move on */ }
+          // } catch (ex) { /** Gobal the exception and move on */ }
         }
         if (!eventHandled) responder = responder.get('parentState');
       }
