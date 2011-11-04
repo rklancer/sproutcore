@@ -5,7 +5,7 @@
 // License:   Licensed under MIT license (see license.js)
 // ==========================================================================
 
-require("src/form/iphone/iphone");
+sc_require("src/form/iphone/iphone");
 
 if (SC.AceTheme.IphoneForm) {
 

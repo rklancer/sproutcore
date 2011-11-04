@@ -11,7 +11,7 @@
 */
 
 // requires popover theme.
-require("src/panels/picker/popover/popover");
+sc_require("src/panels/picker/popover/popover");
 
 var theme = SC.AceTheme.Popover;
 
@@ -23,10 +23,10 @@ SC.AceTheme.Popover.renderers.Workspace = SC.EmptyTheme.renderers.Workspace.exte
     this._TMP_CLASS_NAMES = cn;
     return cn;
   },
-  
+
   render: function(context) {
     context.setClass(this.computeClassNames());
-    
+
     context.push("<div class='sc-workspace-overlay'>",
       "<div class='middle'></div>",
       "<div class='top-left-edge'></div>",
@@ -39,10 +39,10 @@ SC.AceTheme.Popover.renderers.Workspace = SC.EmptyTheme.renderers.Workspace.exte
       "<div class='left-edge'></div>",
       "<div class='sc-pointer'></div>",
     "</div>");
-    
+
     if (this.contentProvider) this.contentProvider.renderContent(context);
   },
-  
+
   update: function() {
     this.$().setClass(this.computeClassNames());
   }
